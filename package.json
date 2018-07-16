@@ -12,6 +12,9 @@
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.1.0",
     "babel-loader": "^7.1.5",
+    "css-loader": "^1.0.0",
+    "sass-loader": "^7.0.3",
+    "style-loader": "^0.21.0",
     "webpack": "^4.15.1",
     "webpack-cli": "^3.0.8"
   },

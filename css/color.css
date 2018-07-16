@@ -96,6 +96,24 @@ header {
     border-top-left-radius: 5px;
 }
 
+.palette-color__content
+{
+  cursor: pointer;
+}
+
+.palette-color__content:hover .palette-color__name,
+.palette-color__content:hover .palette-color__code,
+.palette-color__content .palette-color__icon
+{
+    display: none;
+    padding: 0;
+    transition: .25s;
+}
+
+.palette-color__content:hover .palette-color__icon{
+    display: block;
+}
+
 .palette-color__content {
     padding: 10px;
     color: #a9abab;
@@ -108,10 +126,10 @@ header {
 }
 
 .palette-color__icon {
-    font-size: 48px;
+    font-size: 36px;
     font-weight: medium;
     color: #454545;
-    padding-top: calc(50% - 24px);
+    padding-top: calc(50% - 18px);
 }
 
 #palette--new {

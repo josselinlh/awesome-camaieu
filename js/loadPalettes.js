@@ -8,19 +8,32 @@ export let createDomColorPalette = (name = "", color = "#fff") => {
         <div class="palette-color__square palette-color__darken"></div>
       </div>
       <div class="palette-color__content">
-        <h1 class="palette-color__name">`+name+`</h1>
+        <h2 class="palette-color__name">`+name+`</h2>
+        <h2 class="palette-color__icon"><i class="fa fa-edit"></i></h2>
         <span class="palette-color__code">`+color+`</span>
       </div>
     </li>
     `;
+
+  let camaieu = document.awesomeCamaieu;
+  camaieu.push({"name":name, "color":color});
+  refreshLocalStorage(camaieu);
+
+  //listen
+  const domToListenToChangeColorName = document.querySelectorAll(".palette-color__content");
+  Array.from(domToListenToChangeColorName).forEach(x=>x.addEventListener("click", changeColorName));
+
   return domLiColor;
 };
 
+let changeColorName = function() {
+  console.log("changeColorName to implement");
+
+}
 
 export let changePaletteBgColor = () =>
 {
   const dom = document.querySelectorAll(".palette-color");
-
 
   let getDataAndChangeIt = function(dom)
   {
@@ -34,3 +47,12 @@ export let changePaletteBgColor = () =>
   Array.from(dom).forEach(el => getDataAndChangeIt(el));
 
 };
+
+function refreshLocalStorage(array) {
+  //test memory local storage
+
+  let jsonString = JSON.stringify(array);
+
+  window.localStorage.setItem("awesomeCamaieu", jsonString);
+
+}
