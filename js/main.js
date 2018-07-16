@@ -1,6 +1,6 @@
 import * as load from './loadPalettes';
 import * as newColor from './addNewColor';
-//import '../sass/style.scss';
+import style from '../sass/style.scss';
 
 {
   const urlJson = 'color-list.json';
