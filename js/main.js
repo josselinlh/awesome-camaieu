@@ -4,6 +4,7 @@ import style from '../sass/style.scss';
 
 {
   const urlJson = 'color-list.json';
+  const localStoragePropName = 'awesomeCamaieu';
   document.awesomeCamaieu =[];
 
   let createFromJson = (json) =>
@@ -14,9 +15,10 @@ import style from '../sass/style.scss';
   }
 
   //test if localStorage exists
-  if(window.localStorage.getItem("awesomeCamaieu"))
+  var localStorageItem = window.localStorage.getItem(localStoragePropName);
+  if(localStorageItem)
   {
-    let json = JSON.parse(window.localStorage.getItem("awesomeCamaieu"));
+    let json = JSON.parse(localStorageItem);
     let jsonPromise = new Promise(function(resolve, reject) {
       resolve(createFromJson(json));
     });

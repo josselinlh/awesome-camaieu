@@ -1,5 +1,7 @@
 import * as load from './loadPalettes';
-const domToListenToAddNewColor = document.querySelector("#palette--new");
+const addNewStickerClassName = ".addnewsticker";
+// const addNewStickerClassName = "#palette--new";
+const domToListenToAddNewColor = document.querySelector(addNewStickerClassName);
 
 export let listenToNewColorEvent = () =>
 {
